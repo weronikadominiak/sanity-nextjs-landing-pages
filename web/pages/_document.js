@@ -3,17 +3,24 @@ import Document, {Html, Head, Main, NextScript} from 'next/document'
 import client from '../client'
 
 export default class MyDocument extends Document {
-  static async getInitialProps (ctx) {
+  static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx)
     return client.fetch('*[_id == "global-config"] {lang}.lang[0]').then(lang => {
       return {...initialProps, lang}
     })
   }
 
-  render () {
+  render() {
     return (
       <Html lang={this.props.lang || 'en'}>
-        <Head />
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

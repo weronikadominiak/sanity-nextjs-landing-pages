@@ -21,7 +21,7 @@ const siteConfigQuery = `
   `
 
 class App extends BaseApp {
-  static async getInitialProps ({Component, ctx}) {
+  static async getInitialProps({Component, ctx}) {
     let pageProps = {}
 
     if (Component.getInitialProps) {
@@ -41,11 +41,9 @@ class App extends BaseApp {
     })
   }
 
-  render () {
+  render() {
     const {Component, pageProps} = this.props
-    return (
-      <Component {...pageProps} />
-    )
+    return <Component {...pageProps} />
   }
 }
 

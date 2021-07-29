@@ -13,33 +13,33 @@ class Header extends Component {
     router: PropTypes.shape({
       pathname: PropTypes.string,
       query: PropTypes.shape({
-        slug: PropTypes.string
+        slug: PropTypes.string,
       }),
-      events: PropTypes.any
+      events: PropTypes.any,
     }),
     title: PropTypes.string,
     navItems: PropTypes.arrayOf(
       PropTypes.shape({
         title: PropTypes.string.isRequired,
         slug: PropTypes.shape({
-          current: PropTypes.string
-        }).isRequired
+          current: PropTypes.string,
+        }).isRequired,
       })
     ),
     logo: PropTypes.shape({
       asset: PropTypes.shape({
-        url: PropTypes.string
+        url: PropTypes.string,
       }),
-      logo: PropTypes.string
-    })
+      logo: PropTypes.string,
+    }),
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const {router} = this.props
     router.events.on('routeChangeComplete', this.hideMenu)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     const {router} = this.props
     router.events.off('routeChangeComplete', this.hideMenu)
   }
@@ -51,7 +51,7 @@ class Header extends Component {
   handleMenuToggle = () => {
     const {showNav} = this.state
     this.setState({
-      showNav: !showNav
+      showNav: !showNav,
     })
   }
 
@@ -67,21 +67,21 @@ class Header extends Component {
     return <img src={logo.asset.url} alt={logo.title} className={styles.logo} />
   }
 
-  render () {
+  render() {
     const {title = 'Missing title', navItems, router, logo} = this.props
     const {showNav} = this.state
 
     return (
-      <div className={styles.root} data-show-nav={showNav}>
+      <header className={styles.root} data-show-nav={showNav}>
         <h1 className={styles.branding}>
           <Link
             href={{
               pathname: '/LandingPage',
               query: {
-                slug: '/'
-              }
+                slug: '/',
+              },
             }}
-            as='/'
+            as="/"
             prefetch
           >
             <a title={title}>{this.renderLogo(logo)}</a>
@@ -99,7 +99,7 @@ class Header extends Component {
                     <Link
                       href={{
                         pathname: '/LandingPage',
-                        query: {slug: slug.current}
+                        query: {slug: slug.current},
                       }}
                       as={`/${slug.current}`}
                       prefetch
@@ -114,7 +114,7 @@ class Header extends Component {
             <HamburgerIcon className={styles.hamburgerIcon} />
           </button>
         </nav>
-      </div>
+      </header>
     )
   }
 }

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Ohrenstead';
+  src: url('../public/fonts/Ohrenstead.woff') format('woff2'),
+    url('../public/fonts/Ohrenstead.woff') format('woff'),
+    url('../public/fonts/Ohrenstead.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

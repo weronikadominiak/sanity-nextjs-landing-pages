@@ -1,8 +1,8 @@
 :root {
   --wide-container: 60rem;
   --narrow-container: 40rem;
-
-  --font-family-sans: -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-sans: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-decor: 'Ohrenstead', -apple-system, BlinkMacSystemFont, sans-serif;
 
   --color-black: #202123;
   --color-dark-gray: #32373e;
@@ -14,13 +14,13 @@
 
   /* Typography */
   --unit: 16;
-  --font-micro-size: calc(10 / var(--unit) * 1rem); /* 10px */
+  --font-micro-size: calc(10 / var(--unit) * 2rem); /* 10px */
   --font-micro-line-height: calc(12 / 10); /* 12px */
-  --font-small-size: calc(14 / var(--unit) * 1rem); /* 14px */
+  --font-small-size: calc(14 / var(--unit) * 2rem); /* 14px */
   --font-small-line-height: calc(21 / 14); /* 21px */
   --font-base-size: 1em; /* 16px */
   --font-base-line-height: calc(24 / var(--unit)); /* 24px */
-  --font-large-size: calc(18 / var(--unit) * 1rem); /* 18px */
+  --font-large-size: calc(18 / var(--unit) * 2rem); /* 18px */
   --font-large-line-height: calc(27 / 18); /* 27px */
 
   --font-title3-size: calc(21 / var(--unit) * 1rem); /* 21px */

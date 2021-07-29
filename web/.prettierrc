@@ -1,3 +1,8 @@
 {
-  "printWidth": 100
+  "printWidth": 100,
+  "semi": false,
+  "bracketSpacing": false,
+  "space-before-function-paren": true,
+  "singleQuote": true,
+  "arrowParens": avoid
 }
